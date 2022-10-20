@@ -1,0 +1,173 @@
+:root {
+  --clr-red-dark: hsl(4, 49%, 41%);
+  --clr-red: hsl(359, 71%, 51%);
+  --clr-yellow: hsl(49, 91%, 63%);
+  --clr-black: hsl(13, 16%, 17%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: "Outfit", sans-serif;
+  color: white;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2em;
+}
+
+p {
+  margin-bottom: 2em;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+}
+
+hr {
+  font-size: 0.6rem;
+  margin-top: 3em;
+}
+
+strong {
+  color: var(--clr-yellow);
+}
+
+/* UTILITIES */
+
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.flexbox-col {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+  margin-top: 3em;
+}
+
+.bg--display {
+  min-height: 100vh;
+  background-image: radial-gradient(
+      at 98% 96%,
+      hsla(240, 3%, 83%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 52% 81%, hsla(359, 100%, 42%, 1) 0px, transparent 50%),
+    radial-gradient(at 82% 24%, hsla(4, 49%, 41%, 1) 0px, transparent 50%),
+    radial-gradient(at 12% 32%, hsla(48, 90%, 63%, 1) 0px, transparent 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CARD SECTION */
+
+.card {
+  max-width: 37rem;
+  padding: 1.5rem;
+  overflow: hidden;
+  background-image: linear-gradient(
+    to left,
+    hsl(4, 49%, 41%),
+    hsl(359, 71%, 51%)
+  );
+  border-radius: 1rem;
+  position: relative;
+}
+
+.img--container {
+  width: 100%;
+  border-radius: 1rem;
+  background: var(--clr-yellow);
+  cursor: pointer;
+
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.img--container:is(:hover, :focus) > .eye--icon {
+  z-index: 1;
+}
+
+.main--img {
+  min-height: 25rem;
+  object-fit: cover;
+  border-radius: inherit;
+  z-index: 1;
+
+  transition: 0.6s ease-in-out;
+}
+
+.main--img:hover {
+  opacity: 0.5;
+}
+
+.eye--icon {
+  z-index: -1;
+  position: absolute;
+  left: 40%;
+}
+
+.avatar {
+  width: 7rem;
+  border-radius: 60%;
+  border: solid 2px var(--clr-black);
+}
+
+.fa-clock {
+  animation: shake 0.9s ease infinite;
+}
+
+.fa-color {
+  color: var(--clr-yellow);
+}
+
+.eth--price {
+  color: var(--clr-yellow);
+  cursor: pointer;
+}
+
+.eth--price:hover {
+  color: hsla(49, 91%, 63%, 0.857);
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
